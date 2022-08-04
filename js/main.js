@@ -1,20 +1,16 @@
 // Select all elements from HTML
 let elWrapper = document.querySelector(".movie__wrapper");
-let elForm = document.querySelector(".form");
+let elForm = document.querySelector(".search__form");
 let elInputYear = document.querySelector(".form__year");
 let elInputRating = document.querySelector(".form__rating");
 let elInputCategory = document.querySelector(".form__category");
 let elInputSort = document.querySelector(".form__sorting");
 let elRenderResult = document.querySelector("#results");
 let elMovieTemplate = document.querySelector("#movie_card").content;
-let elCard = document.querySelector(".card");
-let elNameInput = document.querySelector(".name__value")
+let elSearchByName = document.querySelector(".name");
 
-// elCard.addEventListener("click", () => {
-//   card.classList.toggle("cardhover");
-// });
 
-let moviesArray = movies.slice(0, 10);
+let moviesArray = movies.slice(0, 220);
 
 // Normolize
 let normolizedMovies = moviesArray.map(function(item) {
@@ -109,7 +105,7 @@ elForm.addEventListener("submit", function(evt) {
 
         let isTrue = inputCategory == "all" ? true: item.categories.includes(inputCategory);
 
-        let validation = item.year >= inputYear && item.rating >= inputRating && isTrue && elNameInput.value == item.title;
+        let validation = item.year >= inputYear && item.rating >= inputRating && isTrue && elSearchByName.value == item.title;
         
         return validation;
     })
@@ -137,6 +133,7 @@ elForm.addEventListener("submit", function(evt) {
             return a.year - b.year
         })  
     }
+
     
     renderMovies(filteredArray, elWrapper);
 })

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/main.css">
-  <script href="js/bootstrap.js"></script>
-  <title>4oy dz2</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/main.css">
+	<title></title>
 </head>
 <body>
-  <header class="header">
+	<header class="header">
 		<div class="container">
 		</div>
 	</header>
 	
 		<main>
-
 			<section class="hero"> 
 				<div class="container d-flex flex-column justify-content-center justify-content-lg-start pt-5">
 					<h2 class="text-center mb-5">
 						Movies catalog
 					</h2>
-
 					<div class="row d-flex flex-lg-row flex-column ">
 						<div class="col-12 col-lg-4 d-flex flex-column justify-content-center justify-content-lg-start pe-lg-5 mb-3 mb-lg-0">
+							<form id="form"  class="d-flex flex-column gap-3 mb-4 search__form" action="https://echo.htmlacademy.ru/">
+								<input class="form-control name" type="text" placeholder="name">
 
-							<form id="form" class="d-flex flex-column gap-3 mb-4 form" action="echo.htmlacademy.ru/courses">
-								<input class="form-control name__value" type="text" placeholder="name">
-								<input class="form-control year__value form__year" type="text" min="1900" max="2020" placeholder="year">
-								<input class="form-control rate__value form__rating" type="text" min="0" max="10" placeholder="rating">
+								<input class="form-control form__year" id="year" name="year" type="number" min="1900" step="1" max="2023" placeholder="year">
+
+								<input class="form-control form__rating" type="number" name="rating" min="0" max="10" step="0.1" placeholder="rating">
+
 								<div class="input-group">
-									<select class="form-select form__category" id="selects">
+									<select class="form-select form__category" name="categories" id="selects">
 										<option value="all" selected>All</option>
 									</select>
 								</div>
+
 								<div class="input-group">
-									<select class="form-select form__sorting" name="sort" id="inputGroupSelect01">
-										<option value="ratinHighToLow" selected>Rating (high to low)</option>
-										<option value="ratingLowToHigh">Rating (low to high)</option>
-										<option value="yearHighToLow">Year (high to low)</option>
-										<option value="yearLowToHigh">Year (low to high)</option>
-										<option value="az">Aa-Zz</option>
-										<option value="za">Zz-Aa (low to high)</option>
+									<select class="form-select form__sorting" name="sorting" id="inputGroupSelect01">
+										<option value="rating_high-low" selected>Rating (high to low)</option>
+										<option value="rating_low-high">Rating (low to high)</option>
+										<option value="year_high-low">Year (high to low)</option>
+										<option value="year_low-high">Year (low to high)</option>
+										<option value="a-z">A-Z</option>
+										<option value="z-a">Z-A</option>
 									</select>
 								</div>
+
 								<button class="btn bg-primary text-white">Search</button>
 							</form>
 							<h2 class="">Bookmarked movies</h2>
@@ -58,22 +59,20 @@
 								<p class="h5">12 Years a Slave <span class="fw-normal badge bg-danger py-2 d-block w-25 mt-2">Remove</span></p>
 							</div>
 						</div>
-
-						
 						<div class="col-12 col-lg-8 d-flex flex-column">
 							<h2 class="h4">Search results: <span id="results">0</span></h2>
 							<div class="alert alert-primary" role="alert">
 								Use the form on the left  to search for movie
 							</div>
 							<div class="row movie__wrapper d-flex flex-column flex-lg-row">
-
+								
 							</div>
 							<div class="btn-toolbar mb-3 d-flex flex-column align-items-center mt-5" role="toolbar" aria-label="Toolbar with button groups">
-								<div class="btn-group me-2 " role="group"aria-label="First group">
-									<button id="first" class="btn btn-outline-primary active	">1</button>
-									<button id="second" class="btn btn-outline-primary">2</button>
-									<button id="third" type="button" class="btn btn-outline-primary">3</button>
-									<button id="fourth" type="button" class="btn btn-outline-primary">4</button>
+								<div class="btn-group me-2" role="group" aria-label="First group">
+									<button type="button" class="btn btn-outline-primary active">1</button>
+									<button type="button" class="btn btn-outline-primary">2</button>
+									<button type="button" class="btn btn-outline-primary">3</button>
+									<button type="button" class="btn btn-outline-primary">4</button>
 								</div>
 							</div>
 						</div>
@@ -81,30 +80,27 @@
 				</div>
 			</section>        
 		</main>
-
 		<footer class="footer">
 			<div class="container">
 			</div>
 		</footer>	
 
 		<template id="movie_card">
-			<div class="col-12 col-lg-6 p-3 card__wrapper">
+			<div class="col-12 col-lg-6 p-3">
 				<div class="card">
-					<img src="./images/21019319_993223.jpg" width="406" height="228" class="card-img-top movie__img" alt="...">
+					<img src="./images/21019319_993223.jpg" style="object-fit:	contain;" width="406" height="228" class="card-img-top movie__img" alt="...">
 					<div class="card-body">
 						<h5 class="card-title h4 mb-2 movie__title text-nowrap overflow-hidden">John Wick 2</h5>
 						<div class="d-flex mb-2">
-							<img class="me-2" src="./images/monthly-calendar-svgrepo-com.svg" alt="cal" width="20" height="20">
 							<p class="movie__year">2017</p>
+						</div>
+						<div class="d-flex">
+							<p class="movie__rating">9.8</p>
 						</div>
 						<div>
 							<p id="categories"></p>
 						</div>
-						<div class="d-flex">
-							<img class="me-2" src="./images/1289679474.svg" alt="star" width="20" height="20">
-							<p class="movie__rating">9.8</p>
-						</div>
-						<p class="summary"></p>
+
 						<div class="d-flex justify-content-between">
 							<a href="#" class="btn btn-outline-primary movie__url">Watch trailer</a>
 							<button type="button" class="btn btn-outline-info">More info</button>
@@ -114,9 +110,8 @@
 				</div>
 			</div>
 		</template>  
-  <script src="./js/movies.js"></script>
-  <script src="./js/bootstrap.js"></script>
-  <script src="./js/bootstrap.js.map"></script>
-  <script src="./js/main.js"></script>
-</body>
-</html>
+		<script src="./js/bootstrap.js"></script>
+		<script src="./js/movies.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+	</html>
