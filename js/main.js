@@ -1,4 +1,3 @@
-// Select all elements from HTML
 let elWrapper = document.querySelector(".movie__wrapper");
 let elForm = document.querySelector(".search__form");
 let elInputYear = document.querySelector(".form__year");
@@ -7,12 +6,11 @@ let elInputCategory = document.querySelector(".form__category");
 let elInputSort = document.querySelector(".form__sorting");
 let elRenderResult = document.querySelector("#results");
 let elMovieTemplate = document.querySelector("#movie_card").content;
-let elSearchByName = document.querySelector(".name");
 
 
 let moviesArray = movies.slice(0, 220);
 
-// Normolize
+
 let normolizedMovies = moviesArray.map(function(item) {
     return {
         title: item.Title.toString(),
@@ -58,7 +56,6 @@ function renderCategories(array, wrapper) {
 renderCategories(categoriesArray, elInputCategory);
 
 
-// Render Movies
 function renderMovies(array, wrapper) {
     wrapper.innerHTML = null;
     elRenderResult.textContent = array.length;
@@ -95,18 +92,8 @@ elForm.addEventListener("submit", function(evt) {
     let inputRating = elInputRating.value.trim();
     
     let filteredArray = normolizedMovies.filter(function(item) {
-        // let isTrue = "";
-
-        // if (inputCategory == "all") {
-        //     isTrue = true
-        // } else {
-        //     isTrue = item.categories.includes(inputCategory)
-        // }
-
         let isTrue = inputCategory == "all" ? true: item.categories.includes(inputCategory);
-
-        let validation = item.year >= inputYear && item.rating >= inputRating && isTrue && elSearchByName.value == item.title;
-        
+        let validation = item.year >= inputYear && item.rating >= inputRating && isTrue; 
         return validation;
     })
 
@@ -136,6 +123,4 @@ elForm.addEventListener("submit", function(evt) {
 
     
     renderMovies(filteredArray, elWrapper);
-})
-
-
+});

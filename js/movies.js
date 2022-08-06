@@ -1,18 +1,5 @@
 var movies = [
   {
-    "Title": "Patton Oswalt: Annihilation",
-    "fulltitle": "Patton Oswalt: Annihilation (2017)",
-    "movieYear": 2017,
-    "Categories": "Uncategorized",
-    "summary": "Patton Oswald, despite a personal tragedy, produces his best standup yet. Focusing on the tribulations of the Trump era and life after the loss of a loved one, Patton Oswald continues his journey to contribute joy to the world.",
-    "ImageURL": "https://hydramovies.com/wp-content/uploads/2018/04/Patton-Oswalt-Annihilation-Movie-Poster.jpg",
-    "imdb_id": "tt7026230",
-    "imdbrating": 7.4,
-    "runtime": 66,
-    "language": "English",
-    "ytid": "4hZi5QaMBFc"
-  },
-  {
     "Title": "New York Doll",
     "fulltitle": "New York Doll (2005)",
     "movie_year": 2005,
